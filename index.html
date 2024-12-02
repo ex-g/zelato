@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDDY</title>
+    <link rel="stylesheet" href="zelato.css">
+    <style>
+
+        .container{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            perspective: 1000;
+        }
+
+        /* 이너 박스 */
+        .innerBox {
+            border: 3px solid white;
+            width: 340px;
+            height: 620px;
+            border-radius: 10px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
+
+        /* 글자 영역 css */
+        .text {
+            text-align: center;
+            position: absolute;
+            top: 100px;
+            /* border: 1px solid black; */
+        }
+
+        .lg-text{
+            color:white;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .sm-text{
+            color:hotpink;
+            font-size:0.7rem;
+            font-style: italic;
+        }
+
+        #dynamic{
+            display: inline-block;
+            position: relative
+        }
+
+        #dynamic::after{
+            content: "";
+            position: absolute;
+            background-color: white;
+            right: -10px;
+            width: 3px;
+            height: 100%;
+            display: block;
+            top: 0px
+        }
+
+        #dynamic.active::after{
+            display:none
+        }
+
+        /* 큐브 영역 css */
+        .cube{
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            transform-style: preserve-3d;
+            transition: all 2s;
+            top: 210px;
+        }
+
+        .cube img{
+            width: 160px;
+            height: 160px;
+            position:absolute;
+            background-color: rgb(255, 215, 127);
+        }
+
+        .cube img:nth-child(1){
+            transform:translatez(30px)
+        }
+
+        .cube img:nth-child(2){
+            transform:rotatex(90deg) translatez(30px)
+        }
+
+        .cube img:nth-child(3){
+            transform:rotatex(180deg) translatez(30px)
+        }
+
+        .cube img:nth-child(4){
+            transform:rotatex(270deg) translatez(30px)
+        }
+
+        /* 버튼 영역 css */
+        .btn {
+            position: relative;
+            top: 170px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;   
+            font-size: 17px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .btn a {
+            color: rgb(69, 68, 68);
+            text-decoration: none;
+        }
+
+        .btn div {
+            padding: 10px;
+            background-color: rgb(255, 213, 220);
+            border-radius: 30px;
+            border: 1px solid rgb(150, 149, 149);
+            box-shadow: 1px 1px 1px 1px #9f9d9d
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="innerBox">
+            <!-- 텍스트 영역 -->
+            <div class="text">
+                <p id="dynamic" class="lg-text"></p> 
+                <p class="sm-text">Welcome to your BUDDY DAY party</p>
+            </div>
+
+            <!-- 큐브 영역 -->
+            <div class="cube">
+                <img src="img/cakes/cake1.png">
+                <img src="img/cakes/cake2.png">
+                <img src="img/cakes/cake3.png">
+                <img src="img/cakes/cake4.png">
+            </div>
+
+            <!-- 버튼 영역 -->
+            <div class="btn">
+                <div class="about"><a href="about.html">ABOUT</a></div>
+                <div class="terms"><a href="terms.html">TERMS</a></div>
+                <div class="guide"><a href="guide.html">GUIDE</a></div>
+                <div class="calendar"><a href="calendar.html">CALENDAR</a></div>
+            </div>
+        </div>
+    </div>
+
+      <script>
+
+        // 큐브 영역 js
+        let deg = 0;
+    
+        setInterval(()=>{
+          deg -= 90;
+          document.querySelector('.cube').style.transform
+          = 'rotatex(' + deg + 'deg)';
+        }, 3500);
+
+        // 글자 영역 js
+        let target = document.querySelector('#dynamic');
+
+            // 랜덤 문장
+        function randomString(){
+        let songArr=["HAPPY BUDDY DAY", "BE MY BUDDY", "COME TO MY BUD-DAY", "LET'S BE FRIENDS", "I LIKE YOU", "ZELATO'S BUDDY","UNFORGETTABLE B-DAY", "WHEN'S YOUR B-DAY?", "BUDDY'S B-DAY"];
+        let selectString = songArr[Math.floor(Math.random() * songArr.length)];
+        let selectStringArr = selectString.split("");
+
+        return selectStringArr;
+        }
+
+            // 타이핑 리셋
+        function typingReset(){
+        target.textContent = ""
+        dynamic(randomString());
+        }
+
+            // IF~ELSE : 한 글자씩 추출
+        function dynamic(random){
+        console.log(random);
+        if(random.length > 0){
+            target.textContent += random.shift();
+            setTimeout(function(){
+            dynamic(random);
+            },80);
+        } else{
+            setTimeout(typingReset, 3000);
+        }
+        }
+
+        dynamic(randomString());
+
+
+            // 커서 깜빡임 효과
+        function blink(){
+        target.classList.toggle("active");
+        
+        }
+        setInterval(blink, 500)
+      </script>
+</body>
+</html>

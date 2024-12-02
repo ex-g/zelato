@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="zelato.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
+    <style>
+        .slider {
+            display: flex;
+            overflow: auto;
+            scroll-snap-type: x mandatory;
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .img {
+            flex: none;
+            scroll-snap-align: start;
+            width: 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            padding: 16px 22px 0px 22px;
+        }
+
+        .img img {
+            display: block;
+            width: 100%;
+            /* padding: 20px 25px 0px 25px; */
+            border-radius: 10px;
+            border: 2px solid rgb(240, 202, 107)
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <!-- 뒤로 가기 -->
+            <a href="index.html">
+                <span class="material-symbols-outlined">
+                    arrow_back
+                </span>
+            </a>
+
+            <!-- 제목 -->
+            <h3>CALENDAR</h3>
+
+            <!-- 그리드 맞춤용 빈 영역 -->
+            <p></p>
+        </header>
+
+        <!-- 슬라이더 영역 -->
+        <div class="slider">
+            <div class="img"><img src="img/calendar/cal1.jpg"></div>
+            <div class="img"><img src="img/calendar/cal2.jpg"></div>
+            <div class="img"><img src="img/calendar/cal3.jpg"></div>
+            <div class="img"><img src="img/calendar/cal4.jpg"></div>
+            <div class="img"><img src="img/calendar/cal5.jpg"></div>
+            <div class="img"><img src="img/calendar/cal6.jpg"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

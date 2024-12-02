@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDDY</title>
+    <link rel="stylesheet" href="buddy.css">
+    <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="buddy.js"></script>
+    <style>
+        /* calendar */
+        #calendar {
+            display: flex;
+            height: 110px;
+            margin: 10px 10px 0px 10px;
+            border-radius: 20px;
+            background-color: rgb(154, 23, 23);
+            color: white;
+        }
+
+        .day-date {
+            width: 35%;
+            /* position: absolute; */
+        }
+
+        #first-day {
+            font-weight: 900;
+            font-size: 20px;
+            padding: 20px 0px 0px 10px;
+        }
+
+        #first-date {
+            font-size: 60px;
+            position: absolute;
+            top: 65px;
+            left: 60px;
+        }
+
+        .cal {
+            width: 65%;
+        }
+
+        .year-month {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 2px 0px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .grid div {
+            font-size: 10px;
+            padding: 1px;
+        }
+
+        .dateBoard div {
+            border-radius: 5px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+        
+
+        /* TABLE */
+        table {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        img {
+            width: 140px;
+            margin: 0px 7px 0px 7px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- header1 -->
+        <header id="first-header">
+            <div id="title">HAPPY BUDDY DAY !</div>
+            <i class="fa-solid fa-wifi"></i>
+            <!-- 시계 -->
+            <div class="time">
+                <span class="hour">00</span> : <span class="min">00</span>
+                 <!-- : <span class="sec">00</span>  -->
+                 <span class="diff">pm</span>
+            </div>
+            <span>&nbsp</span>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-comment"></i>
+            <i class="fa-solid fa-battery-full"></i>
+        </header>
+
+        <table>
+
+            <!-- 달력 -->
+            <tr>
+                <td colspan="4">
+                    <div id="calendar">
+                        <section class="day-date">
+                            <div id="first-day"></div>
+                            <div id="first-date"></div>
+                        </section>
+                        <section class="cal">
+                            <div class="year-month"></div>
+
+                            <div class="grid days">
+                                <div class="day">S</div>
+                                <div class="day">M</div>
+                                <div class="day">T</div>
+                                <div class="day">W</div>
+                                <div class="day">T</div>
+                                <div class="day">F</div>
+                                <div class="day">S</div>
+                            </div>
+                            
+                            <div class="grid dateBoard"></div>
+                        </section>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">CALENDAR</td>
+            </tr>
+            <tr>
+                <td colspan="4">&nbsp</td>
+            </tr>
+
+
+            <!-- 첫 번째 줄 -->
+            <tr>
+
+                <td colspan="2"><a href="b1.html"><img src="img/widgets/widget01.jpg"></a></td>
+                <td colspan="2"><img src="img/widgets/widget02.jpg"></td>
+
+
+            </tr>
+            <tr>
+                <td colspan="2">BUDDY DAY 1</td>
+                <td colspan="2">Pair Contents</td>
+            </tr>
+            <tr>
+                <td colspan="4">&nbsp</td>
+            </tr>
+
+
+            <!-- 두 번째 줄 -->
+            <tr>
+                <td class="sm-pic"><a href="about.html"><img src="img/widgets/widget04.png"></a></td>
+                <td class="sm-pic"><a href="staff.html"><img src="img/widgets/widget05.jpg"></a></td>
+                <td rowspan="3" colspan="2"><a href="b2.html"><img src="img/widgets/widget03.jpg"></a></td>
+            </tr>
+            <tr>
+                <td>ABOUT</td>
+                <td>STAFF</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td class="sm-pic"><a href="photo.html"><img src="img/widgets/widget06.png"></a></td>
+                <td class="sm-pic"><a href="recruiting.html"><img src="img/widgets/widget07.png"></a></td>
+            </tr>
+            <tr>
+                <td>PHOTO</td>
+                <td>RECRUITING</td>
+                <td colspan="2">BUDDY DAY 2</td>
+            </tr>
+            
+            <tr><td colspan="4">&nbsp</td></tr>  
+        </table>
+
+        
+
+        <!-- Bottom -->
+        <table id="bottom">
+            <tr>
+                <td class="sm-pic"><a href="https://open.kakao.com/o/s0CKc72g"><img src="img/widgets/bottom1.png"></a></td>
+                <td class="sm-pic"><a href="https://www.instagram.com/hufsisoseoul/?hl=en"><img src="img/widgets/bottom2.png"></a></td>
+                <td class="sm-pic"><a href="https://www.youtube.com/@hufsisoglobalcampus1746"><img src="img/widgets/bottom3.png"></a></td>
+                <td class="sm-pic"><a href="https://m.blog.naver.com/hufsisoseoulblog?tab=1&fbclid=PAY2xjawG593ZleHRuA2FlbQIxMAABpsazZihhImGozRXSij_Pf5kv1IMIplVpg2JisBRgnlTC3ZppRcofQB54OQ_aem_4R5C2G2bLRWGkfHtFujedw"><img src="img/widgets/bottom4.png"></a></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+        // 달력 js
+        let weekDay = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+
+        const makeCalendar = (date) => {
+            const currentYear = new Date(date).getFullYear();
+            const currentMonth = new Date(date).getMonth() + 1;
+            const currentDate = new Date(date).getDate() ;
+            const currentDay = new Date(date).getDay();
+            const lastDay = new Date(currentYear, currentMonth, 0).getDate();
+
+            let htmlDummy = '';
+
+            for (let i = 1; i <= lastDay; i++) {
+                if (i == currentDate) {
+                    htmlDummy += `<div style="background-color: white; color: black">${i}</div>`
+                } else {
+                    htmlDummy += `<div>${i}</div>`;
+                }
+            }
+
+            let showDate = '';
+            if (currentDate < 10) {
+                showDate += '0';
+                showDate += `${currentDate}`;
+            } else {
+                showDate += `${currentDate}`;
+            }
+
+            document.querySelector('#first-day').innerHTML = `${weekDay[currentDay]}`;
+            document.querySelector('#first-date').innerHTML = `${showDate}`;
+            document.querySelector('.dateBoard').innerHTML = htmlDummy;
+            document.querySelector('.year-month').innerHTML = `${currentYear}년 ${currentMonth}월`;
+        }
+
+        const date = new Date();
+        makeCalendar(date);
+
+
+    </script>
+</body>
+</html>

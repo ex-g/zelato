@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHOTO</title>
+    <link rel="stylesheet" href="buddy.css">
+    <script src="https://kit.fontawesome.com/77dc09b73f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="buddy.js"></script>
+
+    <style>
+        table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85%;
+            font-size: 12px;
+            color: rgb(74, 72, 72);
+            font-weight: 700;
+        }
+
+        img {
+            width: 140px;
+            border-radius: 20px;
+            border: 1.5px solid rgb(185, 185, 185);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <!-- header1 -->
+       <header id="first-header">
+            <div id="title">HAPPY BUDDY DAY !</div>
+            <i class="fa-solid fa-wifi"></i>
+            <!-- 시계 -->
+            <div class="time">
+                <span class="hour">00</span> : <span class="min">00</span>
+                <!-- : <span class="sec">00</span>  -->
+                <span class="diff">pm</span>
+            </div>
+            <span>&nbsp</span>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-comment"></i>
+            <i class="fa-solid fa-battery-full"></i>
+        </header>
+        <!-- header2 -->
+        <header id="second-header">
+            <!-- 뒤로 가기 -->
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <!-- 제목 -->
+            <h3>PHOTO</h3>
+
+            <!-- 그리드 맞춤용 빈 영역 -->
+            <p></p>
+        </header>
+
+        <!-- 테이블 -->
+        <table>
+            <tr>
+                <td class="image"><img src="img/photos/photo1.jpg"></td>
+                <td rowspan="7">&nbsp&nbsp&nbsp&nbsp</td>
+                <td class="image"><img src="img/photos/photo2.jpg"></td>
+            </tr>
+            <tr>
+                <td>OT</td>
+                <td>BUDDY DAY 1</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp</td>
+            </tr>
+            <tr>
+                <td class="image"><img src="img/photos/photo3.jpg"></td>
+                <td class="image"><img src="img/photos/photo4.jpg"></td>
+            </tr>
+            <tr>
+                <td>BUDDY DAY 2</td>
+                <td>FAREWELL</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>18</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

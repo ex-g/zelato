@@ -42,7 +42,7 @@ header {
     height: 50px;
     z-index: 100;
     background-color: white;
-    border-bottom: 2px solid rgb(24, 23, 23);
+    border-bottom: 2px solid lightgray;
     line-height: 50px;
 }
 

@@ -11,6 +11,10 @@
     font-family: "Playfair Display", serif;
 }
 
+a {
+    -webkit-tap-highlight-color : transparent;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -50,6 +54,11 @@ header .material-symbols-outlined {
     font-size: 30px;
     color: black;
     padding: 10px;
+}
+
+header .material-symbols-outlined:active {
+    transform: scale(1.2);
+    transition: all 0.3s;
 }
 
 body {
